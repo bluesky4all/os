@@ -4,7 +4,6 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <string.h>
-#include <ctype.h>
 
 extern int errno;
 const unsigned short records = 10;
