@@ -24,7 +24,7 @@ Write a program using only system calls that does the following:
 
 ## Pthread and mutex
 Write a program to create 5 (child) threads and make the parent wait until they exit.
-* In each thread, write a message to screen with thread ID, then pthread_yield(), then write another message, then sleep for a few random seconds (1 to 5), then write a third message and exit.
+* In each thread, write a message to screen with thread ID, then pthread_yield(), then write another message, then sleep for a few random seconds (1 to 20), then write a third message and exit.
 * What can you tell about the effects of pthread_yield() vs sleep()?
 * Run the program a few times to see if the output varies.
 	
@@ -34,5 +34,3 @@ Write a program to create 5 (child) threads and make the parent wait until they 
 $ gcc -o file-io-syscall  file-io-syscall.c
 $ g++ -o pthread-example pthread-example.c -lpthread
 ```
-
-
