@@ -3,6 +3,7 @@ Just an attempt to understand core OS concepts.
 ## Table of contents
 * [IO with system calls](#io-with-system-calls)
 * [Pthread and mutex](#pthread-and-mutex)
+* [Synchronisation: Condition Variables](#synchronisation-condition-variables)
 * [Compile](#compile)
 
 ## IO with system calls
@@ -27,7 +28,29 @@ Write a program to create 5 (child) threads and make the parent wait until they 
 * In each thread, write a message to screen with thread ID, then pthread_yield(), then write another message, then sleep for a few random seconds (1 to 20), then write a third message and exit.
 * What can you tell about the effects of pthread_yield() vs sleep()?
 * Run the program a few times to see if the output varies.
-	
+
+## Synchronisation: Condition Variables
+### General instructions
+Write the code using the Pthreds library. Each producer and consumer should using condition variable(s). Each should acquire the lock at the start and release it at the end. Use wait(), signal() and broadcast() as appropriate.
+
+#### Exercise A
+Write a program with 20 threads, 10 of which are producers and 10 are consumers. Declare a shared variable count = 0 and in the producer thread, increment it by one and in the consumer thread decrement by 1. The code for each thread is given below.
+
+```
+producer() {
+count++; print thread_id, count; (edited) 
+}
+
+consumer () {
+print thread_id, count; count--; (edited) 
+}
+```
+
+thread_id is an integer that is 1 to 10 for producers and 11 to 20 for consumers.
+Synchronize this code so that the count goes from 1 to 10 and then goes from 10 to 1.
+
+#### Exercise B
+Modify the above code (version A) such that the count goes from 1 to 5. After that the consumers can start consuming it. Every time count goes below 5, producers can add to it. But if count is at 5, producer should not add to it.
 ## Compile:
 
 ```
