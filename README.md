@@ -38,8 +38,8 @@ Write the code using the Pthreds library.
 
 #### Exercise A
 Write a program with 20 threads,
-*10 of which are producers and 10 are consumers. 
-*Declare a shared variable count = 0 and 
+* 10 of which are producers and 10 are consumers. 
+* Declare a shared variable count = 0 and 
 * in the producer thread, increment it by one and 
 * in the consumer thread decrement by 1. 
 * thread_id is an integer that is 1 to 10 for producers and 11 to 20 for consumers.
@@ -59,7 +59,7 @@ print thread_id, count; count--;
 
 #### Exercise B
 Modify the above code (version A) such that 
-*the count goes from 1 to 5. After that the consumers can start consuming it. 
+* the count goes from 1 to 5. After that the consumers can start consuming it. 
 * Every time count goes below 5, producers can add to it. 
 * But if count is at 5, producer should not add to it.
 
